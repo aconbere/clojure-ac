@@ -13,7 +13,7 @@
       (receive-all aleph-ch (fn [msg] (go (>! in msg)))))))
 
 (defn start-tcp-server
-  "Mirrors aleph.tcp.start-tcp-serves, takes an options hash
+  "Mirrors aleph.tcp.start-tcp-server interface, takes an options hash
     :port - port to bind to
     :frame - framing of the tcp stream
     ...
@@ -29,7 +29,7 @@
     (defn -main
       []
       (let [opts {:port 1234 :frame (string :utf-8 :delimiters ["\r\n"])}
-            connections (start opts)]
+            connections (start-tcp-server opts)]
         (println "started")
         (go-loop [[client-info in out] (<! connections)]
           (println "connection from: " client-info)
