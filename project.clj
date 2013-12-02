@@ -2,7 +2,6 @@
   :description "Aleph Bridge - bridge between aleph and core.async"
   :url "http://github.com/aconbere/clojure-ab"
   :license {:name "MIT" }
-  :main ac.udp
   :dependencies [
     [org.clojure/clojure "1.5.1"]
     [aleph "0.3.0"]
