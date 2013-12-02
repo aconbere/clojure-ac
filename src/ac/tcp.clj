@@ -30,9 +30,9 @@
       []
       (let [opts {:port 1234 :frame (string :utf-8 :delimiters ["\r\n"])}
             connections (start-tcp-server opts)]
-        (println "started")
+        (println \"started\")
         (go-loop [[client-info in out] (<! connections)]
-          (println "connection from: " client-info)
+          (println \"connection from: \" client-info)
           (go-loop [msg (<! in)]
             (println msg)
             (>! out msg)

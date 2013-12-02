@@ -13,7 +13,7 @@
       []
       (let [opts {:port 1234 :frame (string :utf-8)}
             [in out] (udp-socket opts)]
-        (println "started")
+        (println \"started\")
         (go-loop [msg (<! in)]
           (println msg)
           (>! out msg)
